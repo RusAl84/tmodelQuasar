@@ -3,19 +3,12 @@
     <q-card class="big-card" bordered>
       <q-card class="box-card" bordered>
         <q-card-section>
-          <q-input
-            class="textInput"
-            autofocus
-            filled
-            autogrow
-            type="textarea"
-            v-model="topic_num"
-          >
+          <q-input class="textInput" filled type="textarea" v-model="text">
           </q-input> </q-card-section
       ></q-card>
       <q-card class="box-card" bordered>
         <q-card-section>
-          <q-input class="textInput" autofocus filled autogrow v-model="text">
+          <q-input outlined v-model="topic_num" label="Введите количество тем:">
           </q-input> </q-card-section
       ></q-card>
       <q-card-actions class="flex flex-center">
@@ -28,7 +21,7 @@
 </template>
 
 <script>
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, ref } from "vue";
 import { useStore } from "vuex";
 import API from "../api/api";
 
@@ -36,9 +29,9 @@ export default defineComponent({
   name: "PageIndex",
 
   setup() {
-    let text = "";
+    let text = ref("");
     //  "Главный герой всю жизнь занимается финансовыми махинациями. Это не только приносит ему солидные деньги, но и удовольствие от столь рискованных предприятий. На этот раз он решает взломать компьютерную систему государственного банка и завладеть суммой денег, которой ему хватит до конца жизни. Но нужен напарник, хорошо разбирающийся в компьютерах. Он находит одного парня, отбывшего срок за финансовое преступление. Тот не хочет возвращаться в тюрьму и отказывает мошеннику, но вскоре соглашается. А немногим позже компьютерщик понимает, что на свою долю он может не рассчитывать: его попросту используют. Между напарниками начинается настоящая война за ещё не добытые деньги.";
-    let topic_num = "5";
+    let topic_num = ref("5");
     const $store = useStore();
     const opti = computed({
       get: () => $store.state.mes.opti,
