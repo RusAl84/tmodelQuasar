@@ -13,7 +13,7 @@
       ></q-card>
       <q-card-actions class="flex flex-center">
         <q-btn color="primary" @click="onSendClick">
-          Выаолинить тематическое моделирование
+          Выполинить тематическое моделирование
         </q-btn>
       </q-card-actions>
     </q-card>
